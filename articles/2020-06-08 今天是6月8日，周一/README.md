@@ -22,6 +22,6 @@
 
 月末疫情缓解许多，我便来找 @王老师 啦！
 
-![淅川县咖啡馆](https://github.com/juzhiyuan/blog/blob/juzhiyuan-patch-1/images/2020/06/0000001.jpeg)
+![淅川县咖啡馆](./images/1.jpeg)
 
 6月8日，写于去南阳的高速上。

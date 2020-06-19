@@ -11,7 +11,7 @@
 
 ### 君君生日
 和王老师相识4年了~
-![image](https://user-images.githubusercontent.com/2106987/83971742-98b7b000-a90f-11ea-870c-cc6730d26efc.png)
+![image](./images/1.png)
 2016年摄于西安
 
 今年毕业后，她暂时回到南阳教书，学校任务重、假期少，自己可以、也需要理解她。有时下面这首词便不自觉冒出来：
@@ -41,13 +41,13 @@
 
 至于吃，海南粉抱罗粉腌面陵水酸粉东就鸭文昌鸡三杯鸡地瓜菜陈皮炸排骨椰子饭椰子冻以及清补凉！无鸡不成宴！！
 
-![image](https://user-images.githubusercontent.com/2106987/83971912-2bf0e580-a910-11ea-83d6-bc6088819b70.png)
+![image](./images/2.png)
 
-![image](https://user-images.githubusercontent.com/2106987/83971917-2f846c80-a910-11ea-9c34-6695eeaedf3e.png)
+![image](./images/3.png)
 冯小刚电影公社 街景
 
-![image](https://user-images.githubusercontent.com/2106987/83971927-38753e00-a910-11ea-8ef5-54843f2b52b9.png)
-![image](https://user-images.githubusercontent.com/2106987/83971932-3d39f200-a910-11ea-8911-b3d42a6deb7d.png)
+![image](./images/4.png)
+![image](./images/5.png)
 冯小刚电影公社 芳华拍摄地
 
 ![image](https://user-images.githubusercontent.com/2106987/83971937-462ac380-a910-11ea-87be-19cd56e8ccff.png)
