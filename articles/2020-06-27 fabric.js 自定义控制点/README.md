@@ -7,16 +7,19 @@
 ```
 
 ![图1](./images/1.png)
+
 图 1
 
-在使用 [fabric.js](http://fabricjs.com) 的过程中，默认只能选中整个图形，且只有固定的控制点供我们操作，如图 2 所示：
+在使用 [fabric.js](http://fabricjs.com) 的过程中，默认只能选中整个图形，且只有固定的控制点供我们操作，如图 1 所示：
+
+我们希望能展示更多的控制点，提高图形自定义程度，如图 2 所示。首先想到的：由于 Polygon 是由一组端点坐标构成的，最起码做到将每个端点转换为控制点，最终实现图 3 的效果。
 
 ![图2](./images/2.png)
+
 图 2
 
-我们希望能展示更多的控制点，提高图形自定义程度。首先想到的：由于 Polygon 是由一组端点坐标构成的，最起码做到将每个端点转换为控制点，最终实现图 3 的效果。
-
 ![图3](./images/3.png)
+
 图 3
 
 ## 实现
@@ -24,8 +27,8 @@
 首先，获取目标图形所包含的端点坐标。
 
 ```js
-const polygon = fabricCanvas.getActiveObject();
-if (!polygon || !polygon.points) {
+const poly = fabricCanvas.getActiveObject();
+if (!poly || !poly.points) {
   return;
 }
 
@@ -36,6 +39,10 @@ const points = polygon.points;
 
 ```js
 // http://fabricjs.com/custom-controls-polygon
+
+/**
+ * 根据 pointIndex 确定的控制点，返回当前 canvas 与该点相对位置。
+*/
 function polygonPositionHandler(dim, finalMatrix, fabricObject) {
   var x = fabricObject.points[this.pointIndex].x - fabricObject.pathOffset.x,
     y = fabricObject.points[this.pointIndex].y - fabricObject.pathOffset.y;
@@ -51,6 +58,9 @@ function polygonPositionHandler(dim, finalMatrix, fabricObject) {
   );
 }
 
+/**
+ * 处理控制点被拖动的行为
+*/
 function actionHandler(eventData, transform, x, y) {
   var polygon = transform.target,
     currentControl = polygon.controls[polygon.__corner],
@@ -97,14 +107,15 @@ function anchorWrapper(anchorIndex, fn) {
   };
 }
 
-polygon.controls = polygon.points.reduce((acc, point, index) => {
+poly.controls = poly.points.reduce((acc, point, index) => {
   acc[`p${index}`] = new fabric.Control({
     positionHandler: polygonPositionHandler,
     actionHandler: anchorWrapper(
-      index > 0 ? index - 1 : polygon.points.length,
+      index > 0 ? index - 1 : poly.points.length,
       actionHandler
     ),
     actionName: "modifyPolygon",
+    // 自定义属性，用于绑定 Action 与 Point。
     pointIndex: index,
   });
   return acc;
