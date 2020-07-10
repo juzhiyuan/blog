@@ -35,7 +35,7 @@ const useImagesLoaded = () => {
 				})
 			}
 			return null
-		}).filter(Boolean)
+		})
 
 		if (promises.length > 0) {
 			Promise.all(promises).then(() => setLoaded(true))
