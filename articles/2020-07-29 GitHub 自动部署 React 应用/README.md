@@ -1,6 +1,6 @@
 # GitHub Action 自动部署 React 应用 
 
-本文以 Ant Design Pro 为例，Github Action 中包含了编该项目所需的一些步骤，请视情况进行修改。
+本文以 Ant Design Pro 为例，Github Action 中包含了构建该项目所需的一些步骤，请视情况进行修改。
 
 ## 注意：
 
