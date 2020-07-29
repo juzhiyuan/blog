@@ -1,0 +1,36 @@
+# Please modify Line 31 to Line 33, Line 36
+
+name: DeployToOSS
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Install deps
+      run: 
+        yarn
+      env: 
+        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+    - name: Build
+      run: yarn build
+      env:
+        GITHUB_ACTION_PATH: /
+    - name: Config ossutil
+      uses: manyuanrong/setup-ossutil@v1.0
+      with:
+        endpoint: "oss-cn-shenzhen.aliyuncs.com"
+        access-key-id: ${{secrets.OSS_KEY_ID}}
+        access-key-secret: ${{secrets.OSS_KEY_SECRET}}
+        sts-token: ""
+    - name: Upload to OSS
+      run: ossutil cp -rf dist/ oss://api7-dashboard-built/ -u
